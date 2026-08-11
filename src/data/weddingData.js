@@ -1,6 +1,9 @@
-// data/weddingData.js
+// src/data/weddingData.js
 
 const weddingData = {
+    // 🏛️ Foto background khusus Cover & Hero (Candi Prambanan Sunset)
+    heroBackground: 'https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1200&q=80',
+
     couple: {
         groomName: 'Akbar Arjunsah',
         groomNickname: 'Akbar',
@@ -23,6 +26,7 @@ const weddingData = {
         mapsLocationUrl: 'https://maps.google.com/?q=-7.7885,110.3672',
     },
 
+    // 📷 Galeri Foto Prewedding (Kembali ke versi awal)
     gallery: [
         'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
@@ -55,7 +59,7 @@ const weddingData = {
         {
             year: '2021',
             title: 'Pertama Bertemu',
-            description: 'Pertama kali saling mengenal saat mengerjakan proyek kampus bersama.',
+            description: 'Pertama kali saling mengenal saat mengerjakan proyek kampus bersama di Yogyakarta.',
         },
         {
             year: '2024',

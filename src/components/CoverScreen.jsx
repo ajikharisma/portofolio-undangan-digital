@@ -20,9 +20,9 @@ function CoverScreen({ onOpen }) {
         >
             {/* Background foto dengan Dark Overlay & blur */}
             <div
-                className="absolute inset-0 bg-cover bg-center scale-105 filter blur-[3px] opacity-40"
+                className="absolute inset-0 bg-cover bg-center scale-105 filter blur-[2px] opacity-40"
                 style={{
-                    backgroundImage: `url('${weddingData.gallery[0] || 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'}')`
+                    backgroundImage: `url('${weddingData.heroBackground}')`
                 }}
             />
 

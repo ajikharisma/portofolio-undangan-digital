@@ -9,6 +9,7 @@ import MusicToggle from './components/MusicToggle';
 import RSVPForm from './components/RSVPForm';
 import WishesList from './components/WishesList';
 import DigitalGift from './components/DigitalGift';
+import LoveStory from './components/LoveStory';
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
@@ -34,7 +35,7 @@ function App() {
     setIsOpened(true);
   };
 
-  const { couple, event, gallery, music, bankAccounts } = weddingData;
+  const { couple, event, gallery, music, bankAccounts, loveStory } = weddingData;
 
   const formattedHeaderDate = new Date(event.date).toLocaleDateString('id-ID', {
     weekday: 'long',
@@ -51,20 +52,22 @@ function App() {
       {/* Konten Utama Undangan */}
       {isOpened && (
         <div className="max-w-md md:max-w-2xl mx-auto min-h-screen bg-slate-900 border-x border-slate-800/80 shadow-2xl relative pb-16">
-          
+
           {/* Section 1: Hero Header */}
-          <section className="relative py-20 px-6 text-center flex flex-col items-center justify-center min-h-[70vh] overflow-hidden">
-            <div 
-              className="absolute inset-0 bg-cover bg-center opacity-25 filter blur-[1px]"
-              style={{ backgroundImage: `url('${gallery[0]}')` }}
+          <section className="relative py-20 px-6 text-center flex flex-col items-center justify-center min-h-[60vh] overflow-hidden">
+            {/* Background Foto Prambanan */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-30 filter blur-[1px]"
+              style={{ backgroundImage: `url('${weddingData.heroBackground || gallery[0]}')` }}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900" />
 
+            {/* Teks Nama & Tanggal Mempelai */}
             <div className="relative z-10 space-y-4">
               <p className="text-xs uppercase tracking-[0.3em] text-amber-200/80 font-light">
                 Undangan Pernikahan
               </p>
-              
+
               <h1 className="text-4xl sm:text-5xl font-serif text-amber-100 font-bold tracking-wide">
                 {couple.groomNickname} <span className="text-amber-400 font-sans text-3xl font-light">&amp;</span> {couple.brideNickname}
               </h1>
@@ -75,16 +78,10 @@ function App() {
             </div>
           </section>
 
-          {/* Section 2: Countdown Timer */}
-          <section className="py-8 px-4 text-center bg-slate-900/50 border-y border-amber-500/10">
-            <h2 className="text-lg font-serif text-amber-200 mb-1">Menuju Hari Bahagia</h2>
-            <p className="text-xs text-slate-400 mb-4">Hitung mundur acara pernikahan kami</p>
-            
-            <CountdownTimer targetDate={event.date} />
-          </section>
-
           {/* Section 3: Informasi Mempelai */}
           <CoupleInfo couple={couple} />
+
+          <LoveStory loveStory={loveStory}/>
 
           {/* Section 4: Detail Acara & Maps */}
           <EventDetail event={event} />
