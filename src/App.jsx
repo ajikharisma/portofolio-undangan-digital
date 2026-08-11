@@ -8,6 +8,7 @@ import Gallery from './components/Gallery';
 import MusicToggle from './components/MusicToggle';
 import RSVPForm from './components/RSVPForm';
 import WishesList from './components/WishesList';
+import DigitalGift from './components/DigitalGift';
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
@@ -33,7 +34,7 @@ function App() {
     setIsOpened(true);
   };
 
-  const { couple, event, gallery, music } = weddingData;
+  const { couple, event, gallery, music, bankAccounts } = weddingData;
 
   const formattedHeaderDate = new Date(event.date).toLocaleDateString('id-ID', {
     weekday: 'long',
@@ -87,6 +88,9 @@ function App() {
 
           {/* Section 4: Detail Acara & Maps */}
           <EventDetail event={event} />
+
+          {/* Memanggil bankAccounts */}
+          <DigitalGift bankAccounts={bankAccounts} />
 
           {/* Section 5: Galeri Foto */}
           <Gallery photos={gallery} />
